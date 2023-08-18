@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Pessoa
 {
-    String nome;
-    String dataNascimento;
-    String cpf;
+    private String nome;
+    private String dataNascimento;
+    private String cpf;
 
     //Sempre criar um construtor nas classes
     public Pessoa(String nome, String dataNascimento, String cpf) {
