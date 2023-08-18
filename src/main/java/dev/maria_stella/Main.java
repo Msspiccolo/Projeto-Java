@@ -2,7 +2,6 @@ package dev.maria_stella;
 
 import java.util.Scanner;
 
-
 public class Main {
     public static void main(String[] args) {
 
@@ -16,9 +15,11 @@ public class Main {
         System.out.println("Digite a sua data de Nascimento:  ");
         String dataNascimento = sc.nextLine();
 
-        System.out.println(nome);
-        System.out.println(cpf);
-        System.out.println(dataNascimento);
+        Pessoa pessoa  = new Pessoa(nome,dataNascimento,cpf);
+        System.out.println(pessoa.getNome());
+        System.out.println(pessoa.getCpf());
+        System.out.println(pessoa.getDataNascimento());
+
         sc.close();
 
 
