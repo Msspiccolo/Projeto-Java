@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        Pessoa[] pessoas = new Pessoa[10];
         Scanner sc = new Scanner(System.in);//Colocar as variáveis com nomes que mantenham o contexto
         for (int i = 0; i < 10 ; i++) {
             System.out.println("Digite o primeiro nome:  ");
@@ -17,16 +17,12 @@ public class Main {
             String dataNascimento = sc.nextLine();
 
             Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf);
+            pessoas[i] = pessoa;
             System.out.println(pessoa.getNome());
             System.out.println(pessoa.getCpf());
             System.out.println(pessoa.getDataNascimento());
         }
         sc.close();
-
-
-
-
-
 
 
 
