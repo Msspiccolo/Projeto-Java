@@ -8,7 +8,10 @@ public class Main {
     public static void main(String[] args) {
         List<Pessoa> pessoas = new ArrayList<>();
         Scanner sc = new Scanner(System.in);//Colocar as variáveis com nomes que mantenham o contexto
-        for (int i = 0; i < 10 ; i++) {
+        System.out.println("Quantas pessoas você deseja cadastrar? ");
+        int qnt = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < qnt; i++) {
             System.out.println("Digite o primeiro nome:  ");
             String nome = sc.nextLine();//Colocar a primeira palavra com letra minuscula e a segunda em diante com a primeira maiuscula
 
@@ -20,12 +23,15 @@ public class Main {
 
             Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf);
             pessoas.add(pessoa);
+
+        }
+        sc.close();
+        for (int i = 0; i < qnt; i++) {
+            Pessoa pessoa = pessoas.get(i);
             System.out.println(pessoa.getNome());
             System.out.println(pessoa.getCpf());
             System.out.println(pessoa.getDataNascimento());
         }
-        sc.close();
-
 
 
     }
