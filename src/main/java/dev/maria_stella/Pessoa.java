@@ -1,6 +1,7 @@
 package dev.maria_stella;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public class Pessoa
@@ -17,11 +18,7 @@ public class Pessoa
 
     }
     public int getIdade(){
-        if(dataNascimento.getMonthValue() < LocalDate.now().getMonthValue()){
-
-            return (LocalDate.now().getYear() - dataNascimento.getYear());
-        }
-           return (LocalDate.now().getYear() - dataNascimento.getYear())-1;
+        return Period.between(dataNascimento,LocalDate.now()).getYears();
 
     }
 
