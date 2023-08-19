@@ -1,20 +1,30 @@
 package dev.maria_stella;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Pessoa
 {
     private String nome;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
     private String cpf;
 
     //Sempre criar um construtor nas classes
-    public Pessoa(String nome, String dataNascimento, String cpf) {
+    public Pessoa(String nome, LocalDate dataNascimento, String cpf) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
 
     }
+    public int getIdade(){
+        if(dataNascimento.getMonthValue() < LocalDate.now().getMonthValue()){
+
+            return (LocalDate.now().getYear() - dataNascimento.getYear());
+        }
+           return (LocalDate.now().getYear() - dataNascimento.getYear())-1;
+
+    }
+
     //Colocar Get and Setters
     public String getNome() {
         return nome;
@@ -24,11 +34,11 @@ public class Pessoa
         this.nome = nome;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

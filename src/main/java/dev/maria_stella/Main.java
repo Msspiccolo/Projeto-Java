@@ -1,5 +1,7 @@
 package dev.maria_stella;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +21,7 @@ public class Main {
             String cpf = sc.nextLine();
 
             System.out.println("Digite a sua data de Nascimento:  ");
-            String dataNascimento = sc.nextLine();
+            LocalDate dataNascimento = LocalDate.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
             Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf);
             pessoas.add(pessoa);
@@ -31,7 +33,14 @@ public class Main {
             System.out.println(pessoa.getNome());
             System.out.println(pessoa.getCpf());
             System.out.println(pessoa.getDataNascimento());
+            System.out.println(pessoa.getIdade());
         }
+
+
+
+
+
+
 
 
     }
