@@ -91,4 +91,16 @@ public class Pessoa
     public int hashCode() {
         return Objects.hash(nome, dataNascimento, cpf, email, telefone);
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", endereco=" + endereco +
+                '}';
+    }
 }

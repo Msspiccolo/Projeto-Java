@@ -47,7 +47,7 @@ public class Main {
 
             Endereco endereco = new Endereco(rua,bairro,cidade,numCasa,complemento,estado,cep);
 
-            Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf,email,telefone,endereco);
+            Pessoa pessoa = new Pessoa (nome, dataNascimento, cpf,email,telefone,endereco);
             pessoas.add(pessoa);
 
 
@@ -55,13 +55,7 @@ public class Main {
         sc.close();
         for (int i = 0; i < qnt; i++) {
             Pessoa pessoa = pessoas.get(i);
-            System.out.println(pessoa.getNome());
-            System.out.println(pessoa.getCpf());
-            System.out.println(pessoa.getDataNascimento());
-            System.out.println(pessoa.getIdade());
-            System.out.println(pessoa.getEmail());
-            System.out.println(pessoa.getTelefone());
-            System.out.println(pessoa.getEndereco());
+            System.out.println(pessoa);
         }
 
 
