@@ -11,13 +11,15 @@ public class Pessoa
     private String cpf;
     private String email;
     private String telefone;
+    private Endereco endereco;
 
-    public Pessoa(String nome, LocalDate dataNascimento, String cpf, String email, String telefone) {
+    public Pessoa(String nome, LocalDate dataNascimento, String cpf, String email, String telefone, Endereco endereco) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
+        this.endereco = endereco;
     }
 
     //Sempre criar um construtor nas classes
@@ -75,6 +77,14 @@ public class Pessoa
         if (o == null || getClass() != o.getClass()) return false;
         Pessoa pessoa = (Pessoa) o;
         return Objects.equals(nome, pessoa.nome) && Objects.equals(dataNascimento, pessoa.dataNascimento) && Objects.equals(cpf, pessoa.cpf) && Objects.equals(email, pessoa.email) && Objects.equals(telefone, pessoa.telefone);
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     @Override

@@ -29,8 +29,27 @@ public class Main {
             System.out.println("Digite o seu Telefone:  ");
             String telefone = sc.nextLine();
 
-            Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf,email,telefone);
+
+            System.out.println("Digite o nome da sua rua:  ");
+            String rua = sc.nextLine();
+            System.out.println("Digite o nome do seu bairro:  ");
+            String bairro = sc.nextLine();
+            System.out.println("Digite a sua cidade:  ");
+            String cidade = sc.nextLine();
+            System.out.println("Digite o seu estado:  ");
+            String estado = sc.nextLine();
+            System.out.println("Digite o seu CEP:  ");
+            String cep = sc.nextLine();
+            System.out.println("Digite o número da sua casa:  ");
+            String numCasa = sc.nextLine();
+            System.out.println("Digite o complemento:  ");
+            String complemento = sc.nextLine();
+
+            Endereco endereco = new Endereco(rua,bairro,cidade,numCasa,complemento,estado,cep);
+
+            Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf,email,telefone,endereco);
             pessoas.add(pessoa);
+
 
         }
         sc.close();
@@ -42,6 +61,7 @@ public class Main {
             System.out.println(pessoa.getIdade());
             System.out.println(pessoa.getEmail());
             System.out.println(pessoa.getTelefone());
+            System.out.println(pessoa.getEndereco());
         }
 
 
