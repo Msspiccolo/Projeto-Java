@@ -23,7 +23,13 @@ public class Main {
             System.out.println("Digite a sua data de Nascimento:  ");
             LocalDate dataNascimento = LocalDate.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-            Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf);
+            System.out.println("Digite o seu E-mail:  ");
+            String email = sc.nextLine();
+
+            System.out.println("Digite o seu Telefone:  ");
+            String telefone = sc.nextLine();
+
+            Pessoa pessoa = new Pessoa(nome, dataNascimento, cpf,email,telefone);
             pessoas.add(pessoa);
 
         }
@@ -34,6 +40,8 @@ public class Main {
             System.out.println(pessoa.getCpf());
             System.out.println(pessoa.getDataNascimento());
             System.out.println(pessoa.getIdade());
+            System.out.println(pessoa.getEmail());
+            System.out.println(pessoa.getTelefone());
         }
 
 

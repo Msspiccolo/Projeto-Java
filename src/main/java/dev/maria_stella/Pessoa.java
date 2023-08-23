@@ -9,17 +9,38 @@ public class Pessoa
     private String nome;
     private LocalDate dataNascimento;
     private String cpf;
+    private String email;
+    private String telefone;
 
-    //Sempre criar um construtor nas classes
-    public Pessoa(String nome, LocalDate dataNascimento, String cpf) {
+    public Pessoa(String nome, LocalDate dataNascimento, String cpf, String email, String telefone) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
-
+        this.email = email;
+        this.telefone = telefone;
     }
+
+    //Sempre criar um construtor nas classes
+
     public int getIdade(){
         return Period.between(dataNascimento,LocalDate.now()).getYears();
 
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     //Colocar Get and Setters
@@ -53,12 +74,11 @@ public class Pessoa
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(nome, pessoa.nome) && Objects.equals(dataNascimento, pessoa.dataNascimento) && Objects.equals(cpf, pessoa.cpf);
+        return Objects.equals(nome, pessoa.nome) && Objects.equals(dataNascimento, pessoa.dataNascimento) && Objects.equals(cpf, pessoa.cpf) && Objects.equals(email, pessoa.email) && Objects.equals(telefone, pessoa.telefone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, dataNascimento, cpf);
+        return Objects.hash(nome, dataNascimento, cpf, email, telefone);
     }
-
 }
