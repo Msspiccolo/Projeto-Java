@@ -79,6 +79,8 @@ public class Livro {
                 ", editora='" + editora + '\'' +
                 ", isbn='" + isbn + '\'' +
                 '}';
+
+
     }
 
 }

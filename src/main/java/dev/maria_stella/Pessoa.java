@@ -102,5 +102,7 @@ public class Pessoa
                 ", telefone='" + telefone + '\'' +
                 ", endereco=" + endereco +
                 '}';
+
     }
+
 }
