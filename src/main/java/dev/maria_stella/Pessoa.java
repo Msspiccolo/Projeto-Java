@@ -2,16 +2,18 @@ package dev.maria_stella;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class Pessoa
-{
+public class Pessoa {
     private String nome;
     private LocalDate dataNascimento;
     private String cpf;
     private String email;
     private String telefone;
     private Endereco endereco;
+    private final List<Livro> livros = new ArrayList<>();
 
     public Pessoa(String nome, LocalDate dataNascimento, String cpf, String email, String telefone, Endereco endereco) {
         this.nome = nome;
@@ -26,7 +28,18 @@ public class Pessoa
 
     public int getIdade(){
         return Period.between(dataNascimento,LocalDate.now()).getYears();
+    }
 
+    public void addLivro(Livro livro){
+        livros.add(livro);
+    }
+
+    public void removeLivro(Livro livro){
+        livros.remove(livro);
+    }
+
+    public List<Livro> getLivros(){
+        return livros;
     }
 
     public String getEmail() {
@@ -97,6 +110,7 @@ public class Pessoa
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
                 ", dataNascimento=" + dataNascimento +
+                ", idade=" + getIdade() +
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
