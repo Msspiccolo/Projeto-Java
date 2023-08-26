@@ -19,12 +19,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-
-
         List<Pessoa> pessoas = new ArrayList<>();
         int opcao = menu();
-        while (opcao != 5) {
+        while (opcao != 0) {
             switch (opcao) {
                 case 1 -> {
                     System.out.println("Quantas pessoas você deseja cadastrar? ");
@@ -41,6 +38,29 @@ public class Main {
                     }
                     opcao = menu();
                 }
+                case 3, 4 -> {
+
+                }
+                case 5 -> {
+                    Livro livro = cadastrarLivro();
+                    Estante.getInstance().colocarLivro(livro);
+                    opcao = menu();
+                }
+                case 6 -> {
+                    sc.nextLine();
+                    System.out.println("Digite o nome do livro:  ");
+                    String nomeLivro = sc.nextLine();
+                    Livro livro = Estante.getInstance().escolheLivro(nomeLivro);
+                    System.out.println(livro);
+                    opcao = menu();
+                }
+
+
+
+
+
+
+
             }
         }
         sc.close();
@@ -78,14 +98,32 @@ public class Main {
         String complemento = sc.nextLine();
         return new Endereco(rua,bairro,cidade,numCasa,complemento,estado,cep);
     }
+    public static Livro cadastrarLivro(){
+        sc.nextLine();
+        System.out.println("Digite o titulo do livro:  ");
+        String titulo = sc.nextLine();
+        System.out.println("Digite o nome do autor:  ");
+        String autor = sc.nextLine();
+        System.out.println("Digite o gênero:  ");
+        String genero = sc.nextLine();
+        System.out.println("Digite a editora:  ");
+        String editora = sc.nextLine();
+        System.out.println("Digite o Isbn:  ");
+        String isbn = sc.nextLine();
+        return new Livro (titulo,autor,genero,editora,isbn);
+    }
 
 
     public static int menu(){
+        System.out.println("##########################################");
+        System.out.println("Digite 0 para Sair:    ");
         System.out.println("Digite 1 para Cadastrar uma nova pessoa:   ");
         System.out.println("Digite 2 para Ver todas as pessoas:   ");
         System.out.println("Digite 3 para Alterar uma pessoa:   ");
         System.out.println("Digite 4 para Excluir uma pessoa:   ");
-        System.out.println("Digite 5 para Sair:    ");
+        System.out.println("Digite 5 para Adicionar um livro:   ");
+        System.out.println("Digite 6 para pegar um livro:  ");
+
         return sc.nextInt();
     }
 

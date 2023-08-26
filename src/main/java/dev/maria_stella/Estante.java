@@ -47,7 +47,7 @@ public class Estante {
     }
 
 
-    public void removeLivro(Livro escolheLivro) {
+    private void removeLivro(Livro escolheLivro) {
         livros.remove(escolheLivro);
     }
 
