@@ -5,13 +5,21 @@ import java.util.List;
 import java.util.Objects;
 
 public class Estante {
+    private static Estante estante;
+
     private List<Livro> livros;
 
-    public Estante() {
+    public static Estante getInstance() {
+        if (estante == null){
+            estante = new Estante();
+        }
+        return estante;
+    }
+    private Estante() {
         livros = new ArrayList<>();
     }
 
-    public Estante(List<Livro> livros) {
+    private Estante(List<Livro> livros) {
         this.livros = livros;
     }
 
