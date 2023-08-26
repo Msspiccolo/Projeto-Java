@@ -17,6 +17,13 @@ public class Livro {
         this.isbn = isbn;
     }
 
+    public Livro(Livro livro) {
+        new Livro (livro.titulo,livro.autor,livro.genero, livro.editora, livro.isbn);
+    }
+    public Livro clone(){
+        return new Livro(this);
+
+    }
     public String getTitulo() {
         return titulo;
     }
@@ -82,5 +89,8 @@ public class Livro {
 
 
     }
+
+
+
 
 }
