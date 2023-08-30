@@ -39,8 +39,20 @@ public class Main {
                     opcao = menu();
                 }
                 case 3 -> {
+                    System.out.println("Qual pessoa você deseja alterar? ");
+                    for (int i = 0; i < pessoas.size(); i++) {
+                        System.out.println(i + ":  "+ pessoas.get(i));
+                    }
+                    System.out.println("Digite o número para alterar a pessoa:  ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
 
+                    Pessoa novaPessoa = cadastrarPessoa();
+                    pessoas.set(index,novaPessoa);
 
+                    opcao = menu();
+
+                   // OU, pode se usar desse jeito pessoas.set(index,cadastrarPessoa());
                 }
                 case 4 -> {
                     System.out.println("Qual pessoa você deseja excluir? ");
@@ -81,11 +93,46 @@ public class Main {
                     opcao = menu();
 
                 }
+                case 8 -> {
+                    System.out.println("Qual livro você deseja alterar? ");
+                    for (int i = 0; i < Estante.getInstance().getLivros().size(); i++) {
+                        System.out.println(i + ":  "+ Estante.getInstance().getLivros().get(i));
+                    }
+                    System.out.println("Digite o número para alterar o livro:  ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+
+                    Livro novoLivro = cadastrarLivro();
+
+                    Estante.getInstance().getLivros().set(index,novoLivro);
+
+                    opcao = menu();
+
+                }
+                case 9 -> {
+                    for (int i = 0; i < Estante.getInstance().getLivros().size(); i++) {
+                        System.out.println(Estante.getInstance().getLivros().get(i));
+
+                    }
+                    opcao = menu();
+                }
+
+                case 10 ->{
+                    System.out.println("Qual livro você deseja duplicar? ");
+                    for (int i = 0; i < Estante.getInstance().getLivros().size(); i++) {
+                        System.out.println(i + ":  "+ Estante.getInstance().getLivros().get(i));
+                    }
+                    System.out.println("Digite o número para duplicar um livro:  ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+
+                    Livro novoLivro = Estante.getInstance().getLivros().get(index).clone();
 
 
+                    Estante.getInstance().getLivros().add(novoLivro);
 
-
-
+                    opcao = menu();
+                }
 
             }
         }
@@ -148,17 +195,13 @@ public class Main {
         System.out.println("Digite 3 para Alterar uma pessoa:   ");
         System.out.println("Digite 4 para Excluir uma pessoa:   ");
         System.out.println("Digite 5 para Adicionar um livro:   ");
-        System.out.println("Digite 6 para pegar um livro:  ");
-        System.out.println("Digite 7 para excluir um livro:  ");
-
+        System.out.println("Digite 6 para Pegar um livro:  ");
+        System.out.println("Digite 7 para Excluir um livro:  ");
+        System.out.println("Digite 8 para Alterar um livro:  ");
+        System.out.println("Digite 9 para Mostrar todos os livros:  ");
+        System.out.println("Digite 10 para Clonar um livro:  ");
         return sc.nextInt();
     }
-
-
-
-
-
-
 
 
 
