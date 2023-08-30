@@ -38,7 +38,21 @@ public class Main {
                     }
                     opcao = menu();
                 }
-                case 3, 4 -> {
+                case 3 -> {
+
+
+                }
+                case 4 -> {
+                    System.out.println("Qual pessoa você deseja excluir? ");
+                    for (int i = 0; i < pessoas.size(); i++) {
+                        System.out.println(i + ":  "+ pessoas.get(i));
+                    }
+                    System.out.println("Digite o número para remover a pessoa:  ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+
+                    pessoas.remove(index);
+                    opcao = menu();
 
                 }
                 case 5 -> {
@@ -54,7 +68,19 @@ public class Main {
                     System.out.println(livro);
                     opcao = menu();
                 }
+                case 7 -> {
+                    System.out.println("Qual livro você deseja excluir? ");
+                    for (int i = 0; i < Estante.getInstance().getLivros().size(); i++) {
+                        System.out.println(i + ":  "+ Estante.getInstance().getLivros().get(i));
+                    }
+                    System.out.println("Digite o número para remover o livro:  ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
 
+                    Estante.getInstance().getLivros().remove(index);
+                    opcao = menu();
+
+                }
 
 
 
@@ -123,6 +149,7 @@ public class Main {
         System.out.println("Digite 4 para Excluir uma pessoa:   ");
         System.out.println("Digite 5 para Adicionar um livro:   ");
         System.out.println("Digite 6 para pegar um livro:  ");
+        System.out.println("Digite 7 para excluir um livro:  ");
 
         return sc.nextInt();
     }
