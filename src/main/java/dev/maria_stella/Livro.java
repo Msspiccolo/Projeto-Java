@@ -17,9 +17,14 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public Livro(Livro livro) {
-        new Livro (livro.titulo,livro.autor,livro.genero, livro.editora, livro.isbn);
+    private Livro(Livro livro) {
+        this.titulo = livro.titulo;
+        this.autor = livro.autor;
+        this.genero = livro.genero;
+        this.editora = livro.editora;
+        this.isbn = livro.isbn;
     }
+
     public Livro clone(){
         return new Livro(this);
 
@@ -86,11 +91,6 @@ public class Livro {
                 ", editora='" + editora + '\'' +
                 ", isbn='" + isbn + '\'' +
                 '}';
-
-
     }
-
-
-
 
 }
